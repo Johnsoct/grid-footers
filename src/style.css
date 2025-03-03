@@ -1,0 +1,119 @@
+:root {
+    --gap: 20px;
+    --grid-row-height: 30px;
+    --items-per-grid-column: 10;
+    --max-footer-column-columns: 3;
+    --max-height-of-grid: calc(
+        (var(--items-per-grid-column) * var(--grid-row-height))
+        + (var(--gap) * (var(--items-per-grid-column) - 1))
+    );
+    --max-footer-column-width: calc(
+        (var(--max-grid-column-width) * var(--max-footer-column-columns))
+        + (var(--gap) * (var(--max-footer-column-columns) - 1))
+    );
+    --max-grid-column-width: 240px;
+}
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    letter-spacing: -2%;
+}
+
+body {
+    gap: var(--gap);
+    padding: 30px;
+}
+
+a {
+    width: min(100%, var(--max-grid-column-width));
+}
+
+label {
+    padding-bottom: 1rem;
+}
+
+hr {
+    border: 1px solid black;
+    width: 100%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.Explanation {
+    max-width: 720px;
+}
+
+// Test code
+// Test code
+// Test code
+
+.border {
+    border: 1px solid purple;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    max-width: var(--max-footer-column-width);
+    width: 100%;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    max-height: var(--max-height-of-grid);
+
+    &--40 {
+        // max-height: calc(20 * var(--grid-row-height));
+
+max-heightmax-height
+
+        @media screen and (max-width: 1100px) {
+            max-height: calc(35 * var(--grid-row-height));
+        }
+
+        @media screen and (max-width: 575px) {
+            grid-template-columns: unset;
+            max-height: unset;
+        }
+    }
+}
+
+.gap {
+    gap: var(--gap);
+}
+
+.grid {
+    display: grid;
+}
+
+.grid-flow-column {
+    grid-auto-flow: column;
+}
+
+.grid-template-columns {
+    grid-template-columns: repeat(auto-fit, minmax(80px, var(--max-grid-column-width)));
+}
+
+.grid-template-rows {
+    grid-template-rows: repeat(auto-fit, minmax(30px, max-content));
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DUMMY</title>
+        <script type="module" src="/src/main.ts"></script>
+    </head>
+    <body>
+        <div class="Explanation">
+            <h1>Responsive footer columns without explicit breakpoints or JavaScript</h1>
+            <p>When building a component for an unknown amount of content, such as components with slots or a footer component with infinite possibilities of links per column, it's fundamentally required your containers are responsive <strong>without explicit breakpoints or JavaScript</strong> because you don't know when or where to make a breakpoint (unknown amounts of content) and JavaScript shouldn't be necessary for dynamic, responsive containers.</p>
+
+            <h2>Experiments</h2>
+            <ol>
+                <li>Flexbox rows with wrapping</li>
+                <li>Flexbow columns with wrapping</li>
+                <li>Grid with column flow</li>
+                <li>Grid with row flow</li>
+            </ol>
+
+            <h2>Conditions</h2>
+            <ol>
+                <li>Each container works alongside other containers (responsiveness)</li>
+                <li>Each row's columns are of the same height</li>
+                <li>Text-based children do not wrap</li>
+                <li>Mobile responsiveness without explicit breakpoints or JS</li>
+                <li>Containers support 50+ items</li>
+            </ol>
+
+            <h2>Results</h2>
+            <ul>
+                <li>Flex rows do <strong>work</strong>: even with set widths of the child elements, the container will grows left to right, which doesn't work when you only have a few items in a column (which you want to grow vertically)</li>
+                <li>Flex columns cannot work because the flex container with column direction and wrapping will not expand to contain wrapped columns, which is a huge overflow problem</li>
+                <li>Grid with column flow is similar to grid with row flow - you must have a predefined max-height for the container to break into new columns automatically, which means managing an unknown number of items results in an impossible scenario of not know when to set mobile breakpoints</li>
+            </ul>
+        </div>
+
+        <hr />
+
+        <!-- Grid with row flow - single container - 40+ items -->
+        <div class="flex flex-wrap gap hidden">
+            <div class="flex-column">
+                <label>Grid with row flow - single container - 40+ items</label>
+                <div class="grid grid-template-columns grid-template-rows gap footer-column footer-column--40">
+                    <!-- 10 -->
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <!-- 20 -->
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <!-- 30 -->
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <!-- 40 -->
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                </div>
+            </div>
+            <div class="flex-column">
+                <label>Grid with row flow - single container - 40+ items</label>
+                <div class="grid grid-template-columns grid-template-rows gap footer-column footer-column--40">
+                    <!-- 10 -->
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <!-- 20 -->
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <!-- 30 -->
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <!-- 40 -->
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="flex flex-wrap gap hidden">
+            <div class="flex-column">
+                <label>Grid with row flow - single container - 10 items</label>
+                <div class="grid grid-template-columns grid-template-rows gap footer-column footer-column--10">
+                    <!-- 10 -->
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                </div>
+            </div>
+            <div class="flex-column">
+                <label>Grid with row flow - single container - 5 items</label>
+                <div class="grid grid-template-columns grid-template-rows gap footer-column footer-column--5">
+                    <!-- 10 -->
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                    <a>I am a long anchor tag</a>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="flex flex-wrap gap"
+            id="sandbox"
+        ></div>
+    </body>
+</html>
