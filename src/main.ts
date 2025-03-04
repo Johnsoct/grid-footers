@@ -20,16 +20,16 @@ function generateGridFlowRowColumns() {
         grid.id = "injecthere"
         sandboxEl.classList.add("flex", "flex-wrap", "gap")
 
-        label.textContent = `Grid with row flow - single container - ${i} items`
+        label.textContent = `${i} items`
 
         column.append(label, grid)
 
         fragment.append(column)
         
         for (let ii = 1; ii <= i; ii++) {
-            const anchor = document.createElement("anchor")
+            const anchor = document.createElement("a")
 
-            anchor.textContent = "I am a long anchor tag"
+            anchor.textContent = "1st Class Boat and RV Storage"
 
             fragment.getElementById("injecthere").appendChild(anchor)
         }

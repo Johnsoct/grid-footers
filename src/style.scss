@@ -1,12 +1,20 @@
 @use "sass:math";
 
+// VARIABLES
+// VARIABLES
+// VARIABLES
+
 $body-padding: 30px;
 $gap: 20px;
 $grid-row-height: 30px;
 $grid-column-column-limit: 3;
 $grid-column-item-limit: 10;
-$grid-column-max-width: 240px;
-$footer-column-max-width: ($grid-column-max-width * $grid-column-column-limit) + ($gap * ($grid-column-column-limit - 1));
+$grid-column-max-width: 200px;
+
+
+// FUNCTIONS
+// FUNCTIONS
+// FUNCTIONS
 
 @function calculate-number-of-grid-columns($number-of-items, $column-item-limit: $grid-column-item-limit) {
     @return round(up, $number-of-items / $column-item-limit, 1);
@@ -20,6 +28,11 @@ $footer-column-max-width: ($grid-column-max-width * $grid-column-column-limit) +
     @return $width-of-columns + $width-of-gaps;
 }
 
+
+// MIXINS
+// MIXINS
+// MIXINS
+
 @mixin grid-max-height($column-item-limit: $grid-column-item-limit) {
     max-height: ($column-item-limit * $grid-row-height) + ($gap * ($column-item-limit - 1));
 }
@@ -28,6 +41,10 @@ $footer-column-max-width: ($grid-column-max-width * $grid-column-column-limit) +
     max-width: calculate-grid-max-width($number-of-items, $column-item-limit)
 }
 
+
+// DEFAULT OVERRIDES
+// DEFAULT OVERRIDES
+// DEFAULT OVERRIDES
 
 html {
     font-size: 16px;
@@ -47,10 +64,6 @@ body {
     padding: $body-padding;
 }
 
-// a {
-//     width: min(100%, $grid-column-max-width);
-// }
-
 button {
     margin-bottom: 1rem;
 }
@@ -64,21 +77,31 @@ hr {
     width: 100%;
 }
 
-.hidden {
-    display: none !important;
+
+// HELPERS
+// HELPERS
+// HELPERS
+
+.border {
+    border: 1px solid purple;
 }
 
 .Explanation {
     max-width: 720px;
 }
 
-// Test code
-// Test code
-// Test code
-
-.border {
-    border: 1px solid purple;
+.hidden {
+    display: none !important;
 }
+
+.gap {
+    gap: $gap;
+}
+
+
+// LAYOUT CLASSES
+// LAYOUT CLASSES
+// LAYOUT CLASSES
 
 .flex {
     display: flex;
@@ -134,10 +157,6 @@ hr {
         }
     }
     /* stylelint-enable max-nesting-depth */
-}
-
-.gap {
-    gap: $gap;
 }
 
 .grid {
