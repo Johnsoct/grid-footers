@@ -3,32 +3,40 @@
 
 import "./style.scss"
 
+const buttonGridColumnFlow = document.getElementById("grid-column-row")
+const buttonGridRowFlow = document.getElementById("grid-row-flow")
 const sandboxEl = document.getElementById("sandbox")
 
-for (let i = 1; i <= 40; i++) {
-    const column = document.createElement("div")
-    const fragment = new DocumentFragment()
-    const grid = document.createElement("div")
-    const label = document.createElement("label")
+function generateGridFlowRowColumns() {
+    for (let i = 1; i <= 40; i++) {
+        const column = document.createElement("div")
+        const fragment = new DocumentFragment()
+        const grid = document.createElement("div")
+        const label = document.createElement("label")
 
-    column.classList.add("flex-column")
-    grid.classList.add("grid", "grid-template-columns", "grid-template-rows", "gap", "footer-column", `footer-column--${i}`, "border")
-    //grid.classList.add("grid", "grid-flow-column", "grid-template-columns", "grid-template-rows", "gap", "footer-column", `footer-column--${i}`, "border")
-    grid.id = "injecthere"
+        column.classList.add("flex-column")
+        grid.classList.add("grid", "grid-template-columns", "grid-template-rows", "gap", "footer-column", `footer-column--${i}`, "border")
+        //grid.classList.add("grid", "grid-flow-column", "grid-template-columns", "grid-template-rows", "gap", "footer-column", `footer-column--${i}`, "border")
+        grid.id = "injecthere"
+        sandboxEl.classList.add("flex", "flex-wrap", "gap")
 
-    label.textContent = `Grid with row flow - single container - ${i} items`
+        label.textContent = `Grid with row flow - single container - ${i} items`
 
-    column.append(label, grid)
+        column.append(label, grid)
 
-    fragment.append(column)
-    
-    for (let ii = 1; ii <= i; ii++) {
-        const anchor = document.createElement("anchor")
+        fragment.append(column)
+        
+        for (let ii = 1; ii <= i; ii++) {
+            const anchor = document.createElement("anchor")
 
-        anchor.textContent = "I am a long anchor tag"
+            anchor.textContent = "I am a long anchor tag"
 
-        fragment.getElementById("injecthere").appendChild(anchor)
+            fragment.getElementById("injecthere").appendChild(anchor)
+        }
+
+        sandboxEl.appendChild(fragment)
     }
-
-    sandboxEl.appendChild(fragment)
 }
+
+buttonGridRowFlow.addEventListener("click", generateGridFlowRowColumns)
+

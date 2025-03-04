@@ -20,7 +20,6 @@ $footer-column-max-width: ($grid-column-max-width * $grid-column-column-limit) +
     @return $width-of-columns + $width-of-gaps;
 }
 
-
 @mixin grid-max-height($column-item-limit: $grid-column-item-limit) {
     max-height: ($column-item-limit * $grid-row-height) + ($gap * ($column-item-limit - 1));
 }
@@ -51,6 +50,10 @@ body {
 // a {
 //     width: min(100%, $grid-column-max-width);
 // }
+
+button {
+    margin-bottom: 1rem;
+}
 
 label {
     padding-bottom: 1rem;
