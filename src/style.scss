@@ -122,6 +122,7 @@ hr {
 
 .footer-column {
     @include grid-max-height;
+    height: 100%;
 
     /* stylelint-disable max-nesting-depth */
     @for $i from 1 through 40 {
@@ -132,10 +133,6 @@ hr {
 
         &--#{$i} {
             @include grid-max-width($number-of-items: $i);
-
-            @if $number-of-columns == 1 {
-                max-height: unset;
-            }
 
             @if $number-of-columns > 1 {
                 $current-column-limit: $grid-column-item-limit;
